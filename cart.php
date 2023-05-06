@@ -1,10 +1,15 @@
-<?php $title = "Shoes"; ?>
+<?php $title = "Shoes";
+session_start();
+if (!isset($_SESSION['user']['customer'])) {
+    header("Location: sign_in.php");
+} ?>
 <?php include 'layout/header.php'; ?>
 <?php $user = new User_model(); ?>
 <?php
 // retrieve the order total from the URL parameter
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+
 $total = $_GET['total'];
 
 // insert the order data into the database

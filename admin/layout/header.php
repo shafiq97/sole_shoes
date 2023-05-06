@@ -263,7 +263,7 @@ if (!isset($_SESSION['user']['admin'])) {
                 </ul>
             </li>
             <!-- report -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#report-nav" data-bs-toggle="collapse" href="#" aria-expanded="false">
                     <i class="fas fa-chart-line"></i>
                     <span>Report</span>
@@ -283,7 +283,7 @@ if (!isset($_SESSION['user']['admin'])) {
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             <!-- setting -->
             <li class="nav-item ">
                 <a class="nav-link collapsed" href="setting.php">
