@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         );
         $variation->addVariation($dataVariation);
         $_SESSION['message'] = alert('Variation added successfully', 'success');
-        redirect('admin/variation_list.php');
+        redirect('variation_list.php');
     }
 }
 ?>

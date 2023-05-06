@@ -91,7 +91,7 @@ $categories = $category->getAllCategory();
                         </ul>
                     </li>
                     <li class="no_search"><a href="">Sales</a></li>
-                    <li class="no_search"><a href="">About Us</a></li>
+                    <li class="no_search"><a href="about.php">About Us</a></li>
                     <li class="no_search"><a href="#footer">Contact</a></li>
                     <!-- <li class="no_search">
                         <a href="#" class="search"><i class="fas fa-search"></i></a>

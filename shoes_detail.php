@@ -1,4 +1,8 @@
-<?php $title = "Shoes"; ?>
+<?php 
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+$title = "Shoes"; ?>
 <?php include 'layout/header.php'; ?>
 <?php $shoes = new Shoes_model(); ?>
 <?php $variation = new Variation_model(); ?>
