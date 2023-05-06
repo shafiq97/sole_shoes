@@ -210,6 +210,12 @@ if (!isset($_SESSION['user']['admin'])) {
                             <span>Add Category</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="request_list.php">
+                            <i class="bi bi-circle"></i>
+                            <span>Request list</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
             <!-- shoes -->
