@@ -208,9 +208,9 @@ class Shoes_model
         return $this->db->rowCount();
     }
 
-    public function searchShoes()
+    public function searchShoes($keyword)
     {
-        $keyword = $_POST['keyword'];
+        // $keyword = $_POST['keyword'];
         $query = "SELECT * FROM " . $this->table . " WHERE shoes_name LIKE :keyword AND shoes_status != 3";
         $this->db->query($query);
         $this->db->bind('keyword', "%$keyword%");
