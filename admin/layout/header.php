@@ -170,24 +170,24 @@ if (!isset($_SESSION['user']['admin'])) {
                 </a>
                 <ul id="orders-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="orders-list.html">
+                        <a href="orders_list.php">
                             <i class="bi bi-circle"></i>
                             <span>Orders List</span>
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="orders-add.html">
                             <i class="bi bi-circle"></i>
                             <span>Add Orders</span>
                         </a>
-                    </li>
+                    </li> -->
                     <!-- give order -->
-                    <li>
+                    <!-- <li>
                         <a href="give-order.html">
                             <i class="bi bi-circle"></i>
                             <span>Give Order</span>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </li>
             <!-- category -->

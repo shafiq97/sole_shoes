@@ -4,18 +4,22 @@
 
 <main id="main" class="main">
     <div class="pagetitle">
-        <h1><?= $title ?></h1>
+        <h1>
+            <?= $title ?>
+        </h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item active"><?= $title ?></li>
+                <li class="breadcrumb-item active">
+                    <?= $title ?>
+                </li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
     <section class="section dashboard">
         <div class="row">
             <div class="col-12">
-                <?php if (isset($_SESSION['message'])) : ?>
+                <?php if (isset($_SESSION['message'])): ?>
                     <?= $_SESSION['message'] ?>
                     <?php unset($_SESSION['message']); ?>
                 <?php endif; ?>
@@ -50,36 +54,57 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($variation->getAllVariation() as $variation) : ?>
+                                <?php foreach ($variation->getAllVariation() as $variation): ?>
                                     <tr>
-                                        <td><?= $variation['variation_id'] ?></td>
                                         <td>
-                                            <?php if ($variation['variation_type'] == '1') : ?>
+                                            <?= $variation['variation_id'] ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($variation['variation_type'] == '1'): ?>
                                                 <span>Color</span>
-                                            <?php elseif ($variation['variation_type'] == '2') : ?>
+                                            <?php elseif ($variation['variation_type'] == '2'): ?>
                                                 <span>Size</span>
-                                            <?php else : ?>
+                                            <?php else: ?>
                                                 <span>None</span>
                                             <?php endif; ?>
-                                        <td><?= $variation['variation_name'] ?></td>
                                         <td>
-                                            <a href="variation_edit.php?variation_id=<?= $variation['variation_id'] ?>" class="btn btn-primary">Edit</a>
-                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal<?= $variation['variation_id'] ?>">
+                                            <?= $variation['variation_name'] ?>
+                                        </td>
+                                        <td>
+                                            <a href="variation_edit.php?variation_id=<?= $variation['variation_id'] ?>"
+                                                class="btn btn-primary">Edit</a>
+                                            <button type="button" class="btn btn-danger" data-toggle="modal"
+                                                data-target="#deleteModal<?= $variation['variation_id'] ?>">
                                                 Delete
                                             </button>
                                             <!-- Modal -->
-                                            <div class="modal fade" id="deleteModal<?= $variation['variation_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel<?= $variation['variation_id'] ?>" aria-hidden="true">
+                                            <div class="modal fade" id="deleteModal<?= $variation['variation_id'] ?>"
+                                                tabindex="-1" role="dialog"
+                                                aria-labelledby="deleteModalLabel<?= $variation['variation_id'] ?>"
+                                                aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="deleteModalLabel<?= $variation['variation_id'] ?>">Delete Variation</h5>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Are you sure you want to delete this variation?
-                                                        </div>
+                                                        <form method="POST" action="variation_delete.php">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title"
+                                                                    id="deleteModalLabel<?= $variation['variation_id'] ?>">
+                                                                    Delete Variation</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Are you sure you want to delete this variation?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <input type="hidden" name="variation_id"
+                                                                    value="<?= $variation['variation_id'] ?>">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Cancel</button>
+                                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                            </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
