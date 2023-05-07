@@ -55,6 +55,11 @@ $categories = $category->getAllCategory();
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+    <style>
+        .navbar {
+            flex-wrap: wrap;
+        }
+    </style>
 </head>
 
 <body>
@@ -97,16 +102,18 @@ $categories = $category->getAllCategory();
                         <a href="#" class="search"><i class="fas fa-search"></i></a>
                     </li> -->
 
-                    <li class="top-search" style="margin-left: 10px;">
+                    <li class="top-search" style="margin-left: 10px; max-width: 200px;">
                         <form action="layout/search.php" method="get">
                             <div class="input-group">
-                                <input type="text" name="keyword" class="form-control" placeholder="Search for...">
+                                <input type="text" name="keyword" class="form-control" placeholder="Search for..."
+                                    style="max-width: 100%;">
                                 <span class="input-group-btn">
                                     <button class="btn btn-primary" type="submit">Search</button>
                                 </span>
                             </div>
                         </form>
                     </li>
+
 
                     <li class="no_search">
                         <a href="cart.php" class="cart"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp; <span
